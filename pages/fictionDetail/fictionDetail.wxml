@@ -1,0 +1,79 @@
+<!-- fictionDetail wxml -->
+<view id="fictionDetailBox">
+  <view class="fHeader">
+    <!-- 小说简介盒子  -->
+    <view class="fictionMainBox">
+      <!-- 小说封面 -->
+      <image src="{{fiction.fCoverUrl}}" id="fictionFace"></image>
+      <view class="fRight">
+        <!-- 点赞隐藏的图片 -->
+        <image src="/img/afterUp.png" class="hidUpImg {{runUp}}"></image>
+        <text class="readCountText">阅读：{{fiction.readNum}}</text>
+        <text class="typeSign">{{fiction.ftypeName}}</text> 
+        <text class="fName">{{fiction.fName}}</text>
+        <text class="fAuthor">{{fiction.fAuthor}}</text>
+        <text class="authorText">著</text>
+        <!-- 小说评价 -->
+        <view class="fCommentBox" bindtap="onUpCollect">
+          <!-- 点赞 -->
+          <image wx:if="{{hasUp}}" class="upImg" src="/img/afterUp.png" data-event-type="unlike"></image>
+          <image wx:else class="upImg" src="/img/beforeUp.png" data-event-type="like"></image>
+
+          <!-- 收藏 -->
+          <image wx:if="{{hasCollected}}" class="collectImg" src="/img/afterCollect.png" data-event-type="uncollect"></image>
+          <image wx:else class="collectImg" src="/img/beforeCollect.png" data-event-type="collect"></image>
+
+          <!-- 点赞和收藏计数 -->
+          <view class="upCollectNum">
+            <text class="upTextNum">{{fiction.likeNum}}</text>
+            <text class="collectTextNum">{{fiction.collectNum}}</text>
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+    <!-- 小说简介和目录切换 -->
+    <view class="chHeader" bindtap="onChHeader">
+      <text style="color:{{briefColor}};border-bottom-color:{{briefColor}}" data-title="brief">简介</text>
+      <text style="color:{{dirColor}};border-bottom-color:{{dirColor}}" data-title="charterDir">目录</text>
+      <text style="color:{{talkColor}};border-bottom-color:{{talkColor}}" data-title="talkArea">讨论区</text>
+    </view>
+
+    <!-- 小说简介和目录 -->
+    <text class="fBrief" wx:if="{{isBrief}}">{{fiction.fBrief}}</text>
+    <view wx:elif="{{isCharter}}">
+      <block wx:for="{{fictionChapterArr}}" wx:for-index="idx">
+        <button data-chapter-index="{{idx+1}}" class="chapterBtn" catchtap="navigateToChapterDetail">第{{idx+1}}章</button>
+      </block>
+    </view>
+
+    <!-- 小说讨论区 -->
+    <view wx:else class="commentBox">
+      <block wx:for="{{commentList}}" wx:for-item="commentItem" wx:for-index="idx">
+        <view class="userCommentItem">
+          <!-- 评论者头像和昵称和评论时间 -->
+          <view class="userDetailBox">
+            <image src="{{commentItem.avatarUrl}}" class="userAvatarImg"></image>
+            <text class="userNameText">{{commentItem.nickName}}</text>
+            <text class="commentTimeText">{{commentItem.commentTime}}</text>
+          </view>
+          <!-- 评论内容 -->
+          <view class="contentDetailBox">
+            <text class="contentText">{{commentItem.commentContent}}</text>
+          </view>
+        </view>
+      </block>
+      <view class="userCommentSubmitBox">
+        <!-- 评论输入框 -->
+        <input id="commentInput" type="text" placeholder="发表评论" value="{{userComment}}"
+        bindinput="handleUserInput" bindconfirm="handleUserSubmit" maxlength='20'></input>
+        <!-- 评论确认按钮 -->
+        <button id="submitBtn" catchtap="handleUserSubmit">发送</button>
+      </view>
+
+    </view>  
+     <!-- 小说讨论区end -->
+  </view>
+
+</view>

@@ -1,0 +1,3 @@
+<view id="fictionChapterBox">
+  <text class="contentText">{{chapterContent}}</text>
+</view>

@@ -1,0 +1,238 @@
+/*小说详情单个*/
+#fictionDetailBox{
+  width:760rpx;
+  padding-bottom:12rpx;
+}
+
+.fHeader .fictionMainBox{
+  width:760rpx;
+}
+/*小说封面*/
+.fictionMainBox image#fictionFace{
+  width:360rpx;
+  height:384rpx;
+  border:2rpx solid #ccc;
+}
+/* 小说封面右侧盒子 */
+.fictionMainBox .fRight{
+  display:inline-block;
+  position:relative;
+  width:392rpx;
+  height:384rpx;
+}
+
+/*小说阅读人数*/
+.fRight .readCountText{
+  position:absolute;
+  left:14rpx;
+  top:4rpx;
+}
+/* 小说类型 */
+.fRight .typeSign{
+  position:absolute;
+  right:14rpx;
+  top:4rpx;
+  color:rgba(12, 182, 12, 0.808);
+  border:1px solid #0f0;
+  padding:4rpx 12rpx;
+  border-radius:12rpx;
+  font-size:32rpx;
+}
+/* 小说名 */
+.fRight .fName{
+  position:absolute;
+  top:26%;
+  width:392rpx;
+  height:100rpx;
+  margin-top:-40rpx;
+  text-align:center;
+  font-size:60rpx;
+  background-image:-webkit-linear-gradient(45deg,#00f,rgb(235, 143, 23),
+  rgb(94, 238, 50),rgb(250, 250, 71));
+  -webkit-text-fill-color:transparent;
+  -webkit-background-clip:text;
+}
+/* 小说作者 */
+.fRight .fAuthor{
+   position:absolute;
+   top:33%;
+   right:46rpx;
+   margin-right:12rpx;
+   font-family:'LiSu','KaiTi';
+}
+
+/*著*/
+.fRight .authorText{
+   position:absolute;
+   right:4rpx;
+   top:33%;
+   font-size:30rpx;
+
+}
+/*小说点赞收藏盒子*/
+ /* 点赞动画 */
+@keyframes up{         
+  0%{
+    opacity:0;
+      bottom:50rpx;
+  }
+  25%{
+      opacity:1;
+      bottom:120rpx;
+  }
+  80%{
+    opacity:0.8;
+    bottom:300rpx;
+  }
+  
+  100%{
+    opacity:0;
+    bottom:420rpx;
+  }
+
+}
+/* 点赞动画对象 */
+.fRight .hidUpImg{
+  position:absolute;
+    width:54rpx;
+   height:54rpx;
+   bottom:50rpx;
+   right:150rpx;
+   border:0;
+   opacity:0;
+}
+.fRight .upClass{
+  animation:up 1.2s linear;
+  animation-fill-mode: forwards;
+}
+
+.fRight .fCommentBox{
+  position:absolute;
+  bottom:4rpx;
+  right:4rpx;
+}
+.fCommentBox image{
+   width:60rpx;
+   height:60rpx;
+   border: 0;
+   margin-right:42rpx;
+}
+.fCommentBox .upCollectNum{
+  position:relative;
+  width:164rpx;
+  height:32rpx;
+
+}
+
+.upCollectNum text.upTextNum{
+  position:absolute;
+  left:14rpx;
+  height:32rpx;
+  line-height:32rpx;
+}
+.upCollectNum text.collectTextNum{
+  position:absolute;
+  right:20rpx;
+    height:32rpx;
+  line-height:32rpx;
+}
+/* 小说切换简介和目录和讨论区*/
+.chHeader{
+  width:760rpx;
+  height:80rpx;
+  border-bottom:1px solid #a6a6a6;
+}
+.chHeader text{
+  display:inline-block;
+  border-bottom-width:1px;
+  border-bottom-style:solid;
+  padding:0 32rpx;
+   height:80rpx;
+   margin-left:80rpx;
+   line-height:80rpx;
+}
+
+
+/* 小说简介 */
+ .fBrief{
+   display:block;
+   width:760rpx;
+   text-indent:48rpx;
+}
+
+
+/* 小说目录 */
+.chapterBtn{
+   letter-spacing:12rpx;
+   border-bottom:2rpx solid #666;
+}
+
+/* 小说讨论区 */
+.commentBox{
+ width:760rpx;
+}
+
+/* 一条小说评论 */
+.commentBox .userCommentItem{
+   margin-top:6rpx;
+   border-bottom:1rpx solid #a6a6a6;
+   padding:16rpx 0;
+}
+
+.userCommentItem .userDetailBox{
+   display:flex;
+   justify-content:flex-start;
+   align-items: center;
+   height:60rpx;
+}
+/* 评论用户的头像 */
+.userDetailBox .userAvatarImg{
+  width:60rpx;
+  height:60rpx;
+  border-radius:50%;
+}
+/* 评论的用户名 */
+.userDetailBox .userNameText{
+   display:inline-block;
+   margin:0 300rpx 0 10rpx;
+   font-size:30rpx;
+}
+/* 评论时间 */
+.userDetailBox .commentTimeText{
+      display:inline-block;
+       font-size:24rpx;
+}
+/* 评论内容 */
+.userCommentItem .contentDetailBox{
+     letter-spacing:8rpx;
+     text-indent:20rpx;
+}
+.userCommentSubmitBox{
+  width:760rpx;
+  height:80rpx;
+  margin-top:10rpx;
+}
+/* 评论输入框 */
+.userCommentSubmitBox #commentInput{
+  float:left;
+  width:600rpx;
+  height:80rpx;
+  padding-left:12rpx;
+}
+/* 评论确认按钮 */
+.userCommentSubmitBox #submitBtn{
+  float:right;
+  width:130rpx;
+  height:80rpx;
+  background-color:rgb(41, 41, 241);
+  color:#fff;
+  border:0;
+  text-align:center;
+  line-height:80rpx;
+  margin-right:12rpx;
+}
+.userCommentSubmitBox::after{
+  content:'';
+  display:block;
+  clear:both;
+}

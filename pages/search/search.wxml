@@ -1,0 +1,56 @@
+<!--search page-->
+<import src="../../fictionTemplate/fictionSingleTpl.wxml"/>
+
+<view id="searchPage" bindtap="hidSearchBar">
+
+  <!-- 上方输入框 -->
+  <view class="searchBox">
+    <input class="userInput" type="text" placeholder="白夜行" value="{{searchValue}}"      placeholder-class="inputPlaceHolder"
+     maxlength="20" bindinput="getInputValue" bindconfirm="searchFiction" catchtap="showSearchBar"/>
+    <button id="submitBtn" catchtap="searchFiction">搜 索</button>
+    <view id="searchTipBox" hidden="{{searchTipShowHid}}">
+       <block wx:for="{{searchTextList}}" wx:for-item="item" wx:for-index="idx">
+         <view class="tipItem" catchtap="selTipName" data-item-name="{{item}}">{{item}}</view>
+       </block>
+    </view>
+  </view>
+
+
+<!-- 精品和搜索结果小说显示 -->
+  <view id="fictionShowBox">
+
+    <!-- 1.精品推荐 -->
+    <view class="goodRecommend">
+      <!-- 切换推荐条 -->
+      <view class="goodBox">
+        <text class="goodText">精品推荐</text>
+        <text class="goodSwitch" catchtap="toggleGoodfn">{{goodSwitchText}}</text>
+      </view>
+      <!-- 精品小说 -->
+      <view class="goodFictionBox" hidden="{{goodHidShow}}" >
+        <block wx:for="{{goodLists}}" wx:for-item="item" wx:for-index="idx">
+           <template is="fictionSingleTpl" data="{{...item}}"/>
+        </block>
+      </view>
+    </view>
+
+    <!-- 2.搜索结果 -->
+    <view class="goodRecommend">
+      <!-- 切换搜索条 -->
+      <view class="goodBox">
+        <text class="goodText">搜索结果</text>
+        <text class="goodSwitch" catchtap="toggleSearchfn">{{searchSwitchText}}</text>
+      </view>
+      <!-- 搜索结果小说列表 -->
+      <view class="goodFictionBox" hidden="{{searchHidShow}}">
+        <block wx:for="{{searchLists}}" wx:for-item="item" wx:for-index="idx">
+           <template is="fictionSingleTpl" data="{{...item}}"/>
+        </block>
+      </view>
+    </view> 
+
+  </view>
+
+
+
+</view>

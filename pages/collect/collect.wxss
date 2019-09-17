@@ -1,0 +1,79 @@
+/* collect.wxss */
+@import "../../fictionTemplate/fictionSingleTpl.wxss"; 
+#collectPage{
+  width:760rpx;
+}
+
+
+/* 用户信息盒子 */
+#userInfoBox{
+  position:relative;
+  width:760rpx;
+  height:152rpx;
+  border-bottom:1px dotted rgba(50,50,50,0.6);
+}
+
+
+#userInfoBox image.userImg{
+  position:absolute;
+  left:12rpx;
+  top:16rpx;
+    width:120rpx;
+    height:120rpx;
+    border-radius:50%;
+}
+#userInfoBox text.welcomeText{
+   position:absolute;
+   left:50%;
+   top:58rpx;
+   font-size:40rpx;
+   font-family:'STXingkai';
+   color:rgba(50,50,50,0.8);
+}
+#userInfoBox .userName{
+  position:absolute;
+  right:56rpx;
+  top:50rpx;
+  background-image:-webkit-linear-gradient(45deg,
+  rgb(37, 170, 4),rgb(4, 29, 250));
+  -webkit-text-fill-color:transparent;
+  -webkit-background-clip:text;
+  font-family:'华文楷体','微软雅黑';
+  border-radius:10rpx;
+  font-size:46rpx;
+  font-weight:bold;
+}
+
+/* 收藏夹文本 */
+.collectHeader{
+  width:760rpx;
+  height:80rpx;
+ background-image:-webkit-linear-gradient(left,rgb(50,50,50),rgba(0,0,0,0.4),rgb(50,50,50));
+ text-align:center;
+}
+
+.collectHeader .headerText{
+  display:inline-block;
+   color:#fff;
+   height:80rpx;
+   line-height:80rpx;
+   letter-spacing: 12rpx;
+}
+
+
+/* 已收藏的小说列表 */
+.collectList {
+  width: 760rpx;
+  padding-left:0;
+  border-top: 1px solid transparent;
+
+}
+
+/* 收藏小说单个*/
+.collectList .fictionSingleBox {
+  float:left;
+  width: 368rpx;
+  border: 4rpx solid transparent;
+  margin-top: 6rpx;
+  background-color: black;
+}

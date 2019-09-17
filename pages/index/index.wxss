@@ -1,0 +1,114 @@
+@import "../../fictionTemplate/fictionSingleTpl.wxss"; 
+/*导入单个小说简介样式*/
+
+#indexPage {
+  width: 760rpx;
+}
+
+/*首页轮播图样式*/
+#swpImgList swiper.swp {
+  width: 100%;
+  height: 340rpx;
+}
+
+#swpImgList swiper.swp image {
+  width: 100%;
+  height: 100%;
+}
+
+/*热门分类*/
+
+.hotPoint {
+  width: 100%;
+  height: 60rpx;
+  background-image: -webkit-linear-gradient(left, #3130356b, #313035, #3130356b);
+  color: #fff;
+  text-align: center;
+}
+
+.hotPoint .textName {
+  font-weight: bolder;
+  letter-spacing: 6rpx;
+  vertical-align: middle;
+}
+
+/*当前分类*/
+
+.hotClassify {
+  width: 760rpx;
+  height: 62rpx;
+}
+
+.hotClassify .spanName {
+  display:inline-block;
+  font-family: '幼圆';
+}
+
+.hotClassify #curClassName {
+  display: inline-block;
+  width: 200rx;
+  margin-left:20rpx;
+    height: 62rpx;
+    line-height:62rpx;
+}
+
+.hotClassify .hotSwitch {
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 30rpx;
+}
+
+.hotClassify .hotSwitch text.iconAnchor {
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: top;
+  margin-top: 10rpx;
+  line-height: 36rpx;
+  text-align: center;
+}
+
+/* 热门分类的类名列表 */
+
+.hotClassList {
+  position: absolute;
+  width: 760rpx;
+  min-height: 72rpx;
+  bottom: 45%;
+  z-index: 2;
+  background-image: -webkit-linear-gradient(45deg, yellow, red);
+}
+
+.hotClassList .hotNameItem {
+  display: inline-block;
+  width: 25%;
+  height: 72rpx;
+  box-shadow: 2rpx 2rpx 10rpx 4rpx #e9e8f0;
+  text-align: center;
+  line-height: 72rpx;
+}
+
+/* 小说列表和简介 */
+
+#fictionLists {
+  width: 760rpx;
+  padding-top: 4rpx;
+  padding:0;
+  border-top: 1px solid transparent;
+  margin-top:10rpx;
+}
+
+/* 小说单个*/
+.fictionSingleBox {
+  float:left;
+  width: 368rpx;
+  border: 4rpx solid transparent;
+  margin-top: 6rpx;
+  background-color:black;
+}
+
+#fictionLists::after{
+  content:'';
+  display:block;
+  clear:both;
+}

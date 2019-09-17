@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/fictionDetail/fictionDetail",
+    "pages/fictionDetail/fictionChapter/fictionChapterDetail",
+    "pages/search/search",
+    "pages/collect/collect",
+    "pages/read/read"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小说",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#00ccff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/index.png",
+        "selectedIconPath": "img/index-sel.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "发现",
+        "iconPath": "img/search.png",
+        "selectedIconPath": "img/search-sel.png"
+      },
+      {
+        "pagePath": "pages/collect/collect",
+        "text": "收藏",
+        "iconPath": "img/collect.png",
+        "selectedIconPath": "img/collect-sel.png"
+      },
+      {
+        "pagePath": "pages/read/read",
+        "text": "已阅读",
+        "iconPath": "img/hasnotread.png",
+        "selectedIconPath": "img/hasread.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

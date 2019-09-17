@@ -1,0 +1,25 @@
+<!--collect.wxml-->
+<import src="../../fictionTemplate/fictionSingleTpl.wxml" />
+<view id="collectPage">
+  <!-- 用户信息 -->
+  <view id="userInfoBox">
+    <image src="{{userInfoObj.avatarUrl}}" class="userImg"></image>
+    <text class="welcomeText">{{welcomeTime}}</text>
+    <text class="userName">{{userInfoObj.nickName}}</text>
+  </view>
+
+  <!--收藏夹-->
+  <view class="collectHeader">
+    <text class="headerText">收藏夹</text>
+  </view>
+
+  <view class="collectList">
+    <block wx:for="{{myCollectFictions}}" wx:for-item="item" wx:for-index="idx">
+      <template is="fictionSingleTpl" data="{{...item}}" />
+    </block>
+  </view>
+
+
+
+
+</view>

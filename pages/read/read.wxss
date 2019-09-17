@@ -1,0 +1,16 @@
+@import "../../fictionTemplate/fictionSingleTpl.wxss"; 
+.readList {
+  width: 760rpx;
+  padding-left:0;
+  border-top: 1px solid transparent;
+
+}
+
+/* 收藏小说单个*/
+.readList .fictionSingleBox {
+  float:left;
+  width: 368rpx;
+  border: 4rpx solid transparent;
+  margin-top: 6rpx;
+  background-color: black;
+}

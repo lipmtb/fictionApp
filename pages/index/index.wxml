@@ -1,0 +1,57 @@
+<import src="../../fictionTemplate/fictionSingleTpl.wxml" />
+<view id="indexPage">
+  <!-- 轮播图 -->
+  <view id="swpImgList">
+    <swiper class="swp" indicator-dots="true" autoplay="true" interval="5000">
+      <!-- <block wx:for="{{swiperLists}}" wx:for-item="item" wx:for-index="idx">
+        <swiper-item>
+          <image src="{{item}}" />
+        </swiper-item>
+      </block> -->
+      <swiper-item>
+        <image src="../../img/baiyexing.png" />
+      </swiper-item>
+      <swiper-item>
+        <image src="../../img/xiaoleizhi.jpg" />
+      </swiper-item>
+      <swiper-item>
+        <image src="../../img/renshizhilian.jpg" />
+      </swiper-item>
+      <swiper-item>
+        <image src="../../img/yuanlian.jpg" />
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 热门 -->
+  <view class="hotPoint">
+    <text class="textName">热门分类</text>
+  </view>
+
+  <!-- 当前分类 -->
+  <view class="hotClassify">
+    <text class="spanName">当前分类:</text>
+    <text id="curClassName">{{curClass}}</text>
+    <view class="hotSwitch" catchtap="showHidClass">
+      <text class="iconAnchor" animation="{{animationShow}}">></text>
+      <text class="iconAnchor" animation="{{animationShow}}">></text>
+      <text class="iconAnchor" animation="{{animationShow}}">></text>
+    </view>
+  </view>
+
+  <!-- 热门分类的类名列表 -->
+  <view class="hotClassList" hidden="{{hotListHidden}}" bindtap="selClassName">
+    <block wx:for="{{hotNameList}}" wx:for-item="item" wx:for-index="idx">
+    <text class="hotNameItem" data-type-name="{{item}}" data-type-id="{{idx+1}}">{{item}}</text>
+    </block>
+  </view>
+
+  <!-- 小说列表和简介 -->
+  <view id="fictionLists">
+    <!-- 某小说 -->
+    <block wx:for="{{curFictionLists}}" wx:for-item="item" wx:for-index="idx">
+      <template is="fictionSingleTpl" data="{{...item}}" />
+    </block>
+  </view>
+
+</view>

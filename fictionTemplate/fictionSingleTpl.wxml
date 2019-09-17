@@ -1,0 +1,10 @@
+<template name="fictionSingleTpl">
+  <view class="fictionSingleBox">
+    <view class="fTitle">{{fName}}</view>
+    <image src="{{fCoverUrl}}"></image>
+    <view class="fictionBottom">
+      <text class="fictionBriefBox">{{fBrief}}</text>
+      <text class="fictionDetail" catchtap="fDetailFun" data-fiction-id="{{fId}}">详情</text>
+    </view>
+  </view>
+</template>

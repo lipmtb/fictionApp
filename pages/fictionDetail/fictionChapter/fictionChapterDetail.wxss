@@ -1,0 +1,12 @@
+/* pages/fictionDetail/ficitonChapter/fictionChapterDetail.wxss */
+#fictionChapterBox{
+ width:750rpx;
+
+}
+#fictionChapterBox .contentText{
+  display:block;
+   width:750rpx;
+   text-indent:54rpx;
+  font-size:42rpx;
+  
+}

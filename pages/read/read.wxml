@@ -1,0 +1,9 @@
+<!--pages/read/read.wxml-->
+<import src="../../fictionTemplate/fictionSingleTpl.wxml" />
+<view id="readPage">
+  <view class="readList">
+    <block wx:for="{{hasReadFictions}}" wx:for-item="item" wx:for-index="idx">
+      <template is="fictionSingleTpl" data="{{...item}}" />
+    </block>
+  </view>
+</view>

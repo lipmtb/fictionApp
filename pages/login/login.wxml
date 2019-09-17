@@ -1,0 +1,5 @@
+<view id="loginBox" style='background-image:url({{posterBase64Img}})'> 
+  <button id="loginBtn" open-type="getUserInfo" bindgetuserinfo="getLoginInfo">
+    登录
+  </button>
+</view>
